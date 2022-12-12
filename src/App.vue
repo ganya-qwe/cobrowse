@@ -1,6 +1,7 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
 </template>
 
 <script>
@@ -10,7 +11,12 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
+  mounted() {
+    let togetherjs = document.createElement('script')
+    togetherjs.setAttribute('src', 'https://togetherjs.com/togetherjs-min.js')
+    document.head.appendChild(togetherjs)
+  },
 }
 </script>
 
